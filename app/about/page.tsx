@@ -366,10 +366,10 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              "/Life&work/Workspace.jpg",
-              "/Life&work/coding.webp",
-              "/Life&work/Coffee.jpg",
-              "/Life&work/Idea.jpg",
+              "/life-and-work/Workspace.jpg",
+              "/life-and-work/coding.webp",
+              "/life-and-work/Coffee.jpg",
+              "/life-and-work/Idea.jpg",
             ].map((src, index) => (
               <motion.div
                 key={src}

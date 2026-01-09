@@ -77,7 +77,7 @@ export function Footer() {
         </div>
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">© 2024 {personalInfo.name}. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">© 2026 {personalInfo.name}. All rights reserved.</p>
             <p className="text-gray-500 text-sm flex items-center gap-1">Built with <Heart className="w-4 h-4 text-red-500" /> using Next.js</p>
           </div>
         </div>

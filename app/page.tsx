@@ -147,21 +147,13 @@ export default function Home() {
                 
                 {/* Profile image container */}
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl bg-linear-to-br from-blue-100 to-purple-100 dark:from-gray-800 dark:to-gray-700">
-                  {/* If you have a profile image, uncomment this and add the path */}
-                  {/* <Image 
-                    src="/profile.jpg" 
-                    alt={personalInfo.name}
-                    fill
-                    className="object-cover"
-                    priority
-                  /> */}
-                  
-                  {/* Placeholder with initials */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-8xl font-bold text-blue-600 dark:text-blue-400">
-                      {personalInfo.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
+                    <Image
+                      src="/Profile/Pfp.jpg"
+                      alt={personalInfo.name}
+                      fill
+                      className="object-cover"
+                      priority
+                    />
                 </div>
 
                 {/* Floating badge */}
@@ -308,11 +300,14 @@ export default function Home() {
                 whileHover={{ y: -10 }}
                 className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-gray-200 dark:border-gray-700 group"
               >
-                <div className="relative h-48 bg-linear-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 flex items-center justify-center">
-                  <div className="text-6xl opacity-30">
-                    {project.category === "Mobile App" ? "📱" : 
-                     project.category === "Web Application" ? "💻" : "🤖"}
-                  </div>
+                <div className="relative h-48 bg-linear-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900">
+                  <Image
+                    src={project.thumbnail ?? project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">

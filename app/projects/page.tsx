@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, ExternalLink, Github, Filter, Search } from "lucide-react"
 import { projectsData } from "@/lib/portfolio-data"
 
@@ -111,12 +112,14 @@ export default function ProjectsPage() {
                       <div className="w-full h-full bg-linear-to-tr from-blue-500/20 to-purple-500/20" />
                     </div>
 
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-6xl filter drop-shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                        {project.category === "Mobile App" ? "📱" : 
-                         project.category === "Web Application" ? "💻" : "🤖"}
-                      </span>
-                    </div>
+                      <div className="absolute inset-0">
+                        <Image
+                          src={project.thumbnail ?? project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
 
                     {project.featured && (
                       <div className="absolute top-4 right-4 bg-yellow-400/90 backdrop-blur-sm text-yellow-900 px-3 py-1 rounded-full text-xs font-bold shadow-sm">
@@ -134,7 +137,9 @@ export default function ProjectsPage() {
                     </div>
 
                     <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                      {project.title}
+                      <Link href={`/projects/${project.id}`} className="block">
+                        {project.title}
+                      </Link>
                     </h3>
                     
                     <p className="text-gray-600 dark:text-gray-400 mb-6 line-clamp-3 grow">

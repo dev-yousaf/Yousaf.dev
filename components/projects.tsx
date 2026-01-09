@@ -13,22 +13,22 @@ const projects = [
     tech: ["Flutter", "GetX", "Firebase", "Dart", "CRUD", "UI/UX", "Material Design", "Dio"]
   },
   {
-    title: "SubMe – Online Assignment Submission System",
+    title: "EduAssign – Online Assignment Submission System",
     description: "A full-stack web application enabling students and instructors to manage assignment submissions securely and efficiently.",
     details: "Implemented role-based access control (RBAC) for different user types (Admin, Instructor, Student), integrated file upload/download functionality, and optimized MySQL queries for fast performance.",
     tech: ["PHP", "MySQL", "Bootstrap", "CSS"]
   },
   {
     title: "AssignMate – Android Assignment App",
-    description: "A mobile version of SubMe, developed with enhanced functionality and Firebase backend services for real-time synchronization.",
+    description: "A mobile version of EduAssign, developed with enhanced functionality and Firebase backend services for real-time synchronization.",
     details: "Built a responsive and user-friendly Android app with real-time notifications, authentication, and cloud data management, improving accessibility and collaboration for students and teachers.",
     tech: ["Java", "XML", "Firebase"]
   },
   {
-    title: "GemBot – AI Storytelling Chatbot",
-    description: "An interactive chatbot application that generates creative and context-aware stories using Google's Gemini API.",
-    details: "Developed a conversational AI tool that dynamically crafts narratives based on user prompts, showcasing integration of Generative AI with a lightweight web interface built in Streamlit.",
-    tech: ["Python", "Streamlit", "Gemini API"]
+    title: "Distributed Fractal Explorer",
+    description: "A high-performance distributed computing application that renders the Mandelbrot set fractal using parallel processing across multiple CPU cores.",
+    details: "Built with C++ backend leveraging MSMPI for distributed computing, Node.js middleware for coordination, and Next.js frontend for interactive visualization. Utilized vcpkg for dependency management and Visual Studio Build Tools for optimized compilation.",
+    tech: ["C++", "MSMPI", "Node.js", "Next.js", "vcpkg", "Visual Studio Build Tools"]
   }
 ]
 

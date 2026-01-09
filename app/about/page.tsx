@@ -186,12 +186,14 @@ export default function AboutPage() {
               className="relative"
             >
               <div className="aspect-square rounded-2xl overflow-hidden bg-linear-to-br from-blue-100 to-purple-100 dark:from-gray-800 dark:to-gray-700 relative">
-                {/* Abstract Pattern / Placeholder for Image */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-64 h-64 bg-linear-to-tr from-blue-500 to-purple-500 rounded-full blur-3xl opacity-30 animate-pulse" />
-                   <Code2 className="w-32 h-32 text-blue-600/20 dark:text-blue-400/20" />
-                </div>
-                {/* You can replace this with <Image /> when you have a real photo */}
+                {/* Profile photo */}
+                <Image
+                  src="/Profile/Pfp.jpg"
+                  alt={personalInfo.name + ' profile'}
+                  fill
+                  className="object-cover"
+                  priority
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/50 to-transparent dark:from-gray-900/50" />
               </div>
               
@@ -362,27 +364,28 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-96">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { color: "bg-blue-100 dark:bg-blue-900", label: "Workspace" },
-              { color: "bg-purple-100 dark:bg-purple-900", label: "Coding" },
-              { color: "bg-green-100 dark:bg-green-900", label: "Coffee" },
-              { color: "bg-orange-100 dark:bg-orange-900", label: "Ideas" },
-            ].map((item, index) => (
+              "/Life&work/Workspace.jpg",
+              "/Life&work/coding.webp",
+              "/Life&work/Coffee.jpg",
+              "/Life&work/Idea.jpg",
+            ].map((src, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
+                key={src}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`relative rounded-2xl overflow-hidden ${item.color} ${
-                  index === 0 ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
-                }`}
+                transition={{ delay: index * 0.08 }}
+                className={`relative rounded-2xl overflow-hidden ${index === 0 ? "col-span-2 row-span-2 h-96" : "h-44"}`}
               >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-lg font-bold opacity-50">{item.label}</span>
-                </div>
-                {/* Placeholder for real images */}
+                <Image
+                  src={src}
+                  alt={`Life & Work ${index}`}
+                  fill
+                  className="object-cover"
+                  sizes={index === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
+                />
                 <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-colors" />
               </motion.div>
             ))}

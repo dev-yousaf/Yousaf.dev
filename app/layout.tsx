@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeToggle } from "@/components/theme-toggle";
+// Theme switching removed — use default styling
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
@@ -25,17 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          <ThemeToggle />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

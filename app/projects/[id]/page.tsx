@@ -1,9 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import { use } from "react"
+import { use, useState } from "react"
 import { ArrowLeft, ExternalLink, Github, CheckCircle2, Layers, Cpu, Trophy, Smartphone, Globe, Brain } from "lucide-react"
 import { projectsData } from "@/lib/portfolio-data"
 
@@ -14,6 +15,8 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
   if (!project) {
     notFound()
   }
+
+  const [lightbox, setLightbox] = useState<string | null>(null)
 
   const getIcon = (category: string) => {
     switch(category) {
@@ -102,16 +105,17 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               transition={{ delay: 0.2 }}
               className="relative aspect-video bg-linear-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700"
             >
-              {/* Main Project Image Placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center opacity-20">
-                  {getIcon(project.category)}
-                  <p className="mt-4 font-bold text-2xl">Project Preview</p>
-                </div>
-              </div>
-              
+              {/* Main Project Image */}
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+                priority
+              />
+
               {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
             </motion.div>
           </div>
         </div>
@@ -212,11 +216,16 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.2 }}
-                  className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 relative group"
+                  className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 relative group cursor-pointer"
+                  onClick={() => setLightbox(shot)}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-600">
-                    <span className="font-medium">Screenshot {i + 1}</span>
-                  </div>
+                  <Image
+                    src={shot}
+                    alt={`${project.title} screenshot ${i + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <p className="text-white font-bold">View Fullscreen</p>
@@ -226,7 +235,23 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
             </div>
           </div>
 
-          {/* Outcome Section */}
+            {/* Lightbox Modal */}
+            {lightbox && (
+              <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4" onClick={() => setLightbox(null)}>
+                <div className="relative w-full max-w-5xl h-[80vh]">
+                  <Image src={lightbox} alt="Screenshot" fill className="object-contain" />
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setLightbox(null); }}
+                    className="absolute top-4 right-4 bg-white/20 text-white rounded-full p-2 hover:bg-white/30"
+                    aria-label="Close"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Outcome Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -99,11 +99,11 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-bold text-gray-900 dark:text-white mb-1">{info.title}</h3>
                       {info.href ? (
-                        <a href={info.href} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        <a href={info.href} className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-words">
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-gray-600 dark:text-gray-400">{info.value}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 break-words">{info.value}</p>
                       )}
                     </div>
                   </div>

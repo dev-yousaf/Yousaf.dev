@@ -18,6 +18,7 @@ import {
   Globe
 } from "lucide-react"
 import { projectsData, personalInfo, services, process, testimonials } from "@/lib/portfolio-data"
+import { DownloadResume } from '@/components/download-resume'
 
 export default function Home() {
   const featuredProjects = projectsData.filter(p => p.featured).slice(0, 3)
@@ -129,6 +130,10 @@ export default function Home() {
                     Get in Touch
                   </motion.button>
                 </Link>
+
+                <div className="flex items-center">
+                  <DownloadResume />
+                </div>
               </motion.div>
             </motion.div>
 

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { MapPin, Mail, Phone, Github, Linkedin } from "lucide-react"
 import { ReactNode } from "react"
+import { DownloadResume } from "./download-resume"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -70,10 +71,17 @@ export function Hero() {
 
         <motion.div
           variants={fadeInUp}
-          className="flex justify-center gap-4"
+          className="flex flex-wrap justify-center gap-4"
         >
           <SocialButton href="https://github.com/dev-yousaf" icon={<Github />} label="GitHub" />
           <SocialButton href="https://linkedin.com/in/muhammad-yousaf" icon={<Linkedin />} label="LinkedIn" />
+        </motion.div>
+
+        <motion.div
+          variants={fadeInUp}
+          className="mt-8"
+        >
+          <DownloadResume />
         </motion.div>
 
         <motion.div

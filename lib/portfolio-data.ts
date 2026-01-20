@@ -4,7 +4,7 @@
 export const personalInfo = {
   name: "Muhammad Yousaf",
   title: "Software Engineer",
-  subtitle: "Full-Stack Developer & Mobile App Specialist",
+  subtitle: "Full-Stack Mobile & App Developer",
   bio: "Building modern web and mobile applications with a focus on clean code and user experience. Passionate about learning new technologies and solving real-world problems through software.",
   location: "Lahore, Pakistan",
   email: "muhammadyousuf575@gmail.com",

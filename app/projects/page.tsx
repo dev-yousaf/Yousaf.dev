@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, ExternalLink, Github, Filter, Search } from "lucide-react"
+import { ArrowRight, ExternalLink, Github, Search } from "lucide-react"
 import { projectsData } from "@/lib/portfolio-data"
 
-const categories = ["All", "Mobile App", "Web Application", "AI/ML"]
+const categories = ["All", ...Array.from(new Set(projectsData.map((p) => p.category)))]
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -29,7 +29,7 @@ export default function ProjectsPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent"
+            className="text-3xl md:text-4xl font-bold mb-6 bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent"
           >
             Featured Projects
           </motion.h1>

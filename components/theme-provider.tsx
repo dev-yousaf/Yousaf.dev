@@ -1,8 +1,18 @@
 "use client"
 
 import * as React from "react"
+import { ThemeProvider as NextThemesProvider } from "next-themes"
 
-// Theme switching removed — keep a no-op provider so imports remain valid
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <NextThemesProvider
+      attribute="class"
+      defaultTheme="light"
+      enableSystem={false}
+      themes={["light", "dark"]}
+      disableTransitionOnChange
+    >
+      {children}
+    </NextThemesProvider>
+  )
 }

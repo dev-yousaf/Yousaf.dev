@@ -1,38 +1,25 @@
 import React from 'react'
 import { NextRequest, NextResponse } from 'next/server';
-import { renderToStream } from '@react-pdf/renderer';
+import { renderToBuffer } from '@react-pdf/renderer';
 import { ResumePDF } from '@/components/resume-pdf';
 
 export const runtime = 'nodejs'
 
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
   try {
-    // Generate the PDF stream (use React.createElement to avoid JSX in .ts)
-    const stream = await renderToStream(React.createElement(ResumePDF));
+    const pdfBytes = await renderToBuffer(React.createElement(ResumePDF));
+    const buffer = Buffer.isBuffer(pdfBytes) ? pdfBytes : Buffer.from(pdfBytes);
 
-    // Collect chunks from either a Web ReadableStream or a Node async iterable
-    const chunks: Buffer[] = [];
-
-    if (typeof (stream as any).getReader === 'function') {
-      const reader = (stream as any).getReader();
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        if (value) chunks.push(Buffer.from(value));
-      }
-    } else {
-      // Node Readable stream or async iterable
-      for await (const chunk of stream as any) {
-        chunks.push(Buffer.from(chunk));
-      }
+    if (buffer.length === 0) {
+      throw new Error('Generated PDF is empty');
     }
 
-    const buffer = Buffer.concat(chunks);
-
-    return new NextResponse(buffer, {
+    return new NextResponse(new Uint8Array(buffer), {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': 'attachment; filename="Muhammad_Yousaf_Resume.pdf"',
+        'Content-Length': buffer.length.toString(),
+        'Cache-Control': 'no-store',
       },
     });
   } catch (error) {

@@ -62,7 +62,7 @@ export default function ContactPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent"
+            className="text-3xl md:text-4xl font-bold mb-6 bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent"
           >
             Let's Work Together
           </motion.h1>
@@ -99,11 +99,11 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-bold text-gray-900 dark:text-white mb-1">{info.title}</h3>
                       {info.href ? (
-                        <a href={info.href} className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-words">
+                        <a href={info.href} className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors wrap-break-word">
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-sm text-gray-600 dark:text-gray-400 break-words">{info.value}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 wrap-break-word">{info.value}</p>
                       )}
                     </div>
                   </div>

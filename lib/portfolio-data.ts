@@ -4,28 +4,28 @@
 export const personalInfo = {
   name: "Muhammad Yousaf",
   title: "Full-Stack Developer",
-  subtitle: "React/Next.js + Node.js/NestJS (Mobile Secondary)",
-  bio: "Full-Stack developer focused on building web applications with React, Next.js, Node.js, and NestJS. I design APIs, data models, and clean frontend architecture through hands-on projects that demonstrate practical engineering decisions, maintainability, and delivery discipline.",
+  subtitle: "React · Next.js · Node.js · NestJS",
+  bio: "I build full-stack web applications end-to-end — from database schema and REST APIs to responsive React interfaces. With professional experience at a software house and a remote product company, I focus on clean architecture, maintainable code, and shipping features that work reliably.",
   location: "Lahore, Pakistan",
   email: "muhammadyousuf575@gmail.com",
   phone: "+92 314 4386252",
-  availability: "Open to Full-Time Roles (Local & Remote)",
-  image: "/Profile/Pfp.jpg", // Profile image
+  availability: "Open to Full-Time Roles — Local & Remote",
+  image: "/Profile/Pfp.jpg",
   social: {
     github: "https://github.com/dev-yousaf",
-    linkedin: "https://www.linkedin.com/in/muhammad-yousaf-website-developer/",
+    linkedin: "https://www.linkedin.com/in/yousaf-dev/",
   }
 }
 
 export const about = {
-  headline: "Building Practical Full-Stack Systems",
-  description: "I am a Full-Stack developer based in Lahore, focused on React/Next.js on the frontend and Node.js/NestJS on the backend. My work centers on API design, database modeling, authentication flows, and clean UI architecture. I use portfolio projects to show real implementation depth, clear technical trade-offs, and production-minded engineering practices.",
-  philosophy: "I value clarity over hype: define the problem, build the simplest reliable architecture, and document decisions so the product can scale with fewer rewrites.",
+  headline: "Building Full-Stack Systems That Work",
+  description: "Based in Lahore, I specialize in React/Next.js frontends and Node.js/NestJS backends. I have worked in team environments with Git workflows, sprint cycles, and real product requirements. I care about writing code that is easy to read, extend, and hand off.",
+  philosophy: "Ship working software first. Refactor with intention. Document decisions so the next developer does not have to guess.",
   stats: [
-    { label: "Years Experience", value: "1+" },
-    { label: "Projects Completed", value: "5" },
+    { label: "Years Experience", value: "2+" },
+    { label: "Projects Completed", value: "8+" },
     { label: "Core Stack", value: "React + Node" },
-    { label: "Primary Focus", value: "Full-Stack" }
+    { label: "Availability", value: "Open to Work" }
   ]
 }
 
@@ -35,16 +35,16 @@ export const timeline = [
     title: "Associate Software Engineer",
     company: "Cubicsol.inc",
     location: "Lahore, Pakistan",
-    description: "Worked on application features using Flutter, React, and Node.js. Contributed to UI implementation, API integration, and code maintenance tasks in a team workflow with Git-based collaboration and iterative delivery.",
+    description: "Built and maintained production features across 2 platforms (Flutter mobile and React web). Integrated third-party APIs, implemented UI components from design specs, and contributed through Git-based code reviews and release cycles.",
     icon: "Briefcase",
     tags: ["Flutter", "React", "Node.js", "API Integration", "Git"]
   },
   {
     year: "2024 - 2025",
-    title: "Web Developer & Designer",
+    title: "Web Developer",
     company: "Deal.ai",
     location: "Remote",
-    description: "Built responsive landing pages and reusable web components in a remote setup. Focused on layout quality, cross-device behavior, and practical frontend implementation aligned with product requirements.",
+    description: "Developed responsive landing pages and reusable UI components for a remote product team. Delivered pixel-accurate layouts across desktop, tablet, and mobile breakpoints using React and Next.js while coordinating asynchronously with an international team.",
     icon: "Globe",
     tags: ["React", "Next.js", "Responsive UI", "Component Design", "Remote"]
   },
@@ -53,7 +53,7 @@ export const timeline = [
     title: "Bachelor of Computer Science",
     company: "Superior University",
     location: "Lahore, Pakistan",
-    description: "Pursuing BSCS with focus on software engineering fundamentals, databases, algorithms, and system design concepts. Applying coursework directly through full-stack and mobile portfolio projects.",
+    description: "Pursuing BSCS with focus on software engineering, databases, algorithms, and system design. Applying coursework directly through full-stack and mobile projects.",
     icon: "GraduationCap",
     tags: ["Software Engineering", "Databases", "Algorithms", "System Design"]
   }
@@ -67,8 +67,8 @@ export const skills = [
   },
   {
     category: "Backend Engineering",
-    icon: "Database",
-    items: ["Node.js", "Nest.js", "REST API Design", "Authentication", "Validation", "Error Handling", "WebSocket Basics"]
+    icon: "Server",
+    items: ["Node.js", "NestJS", "REST API Design", "Authentication", "Validation", "Error Handling", "WebSockets"]
   },
   {
     category: "Databases & Data Modeling",
@@ -76,12 +76,12 @@ export const skills = [
     items: ["PostgreSQL", "Prisma ORM", "MongoDB", "Firebase", "Schema Design", "Relations", "Migrations"]
   },
   {
-    category: "Mobile Development (Secondary)",
+    category: "Mobile Development",
     icon: "Smartphone",
     items: ["Flutter", "Dart", "GetX", "Provider", "Android SDK", "Firebase", "Offline Cache Patterns"]
   },
   {
-    category: "Testing, DevOps & Tooling",
+    category: "Tooling & DevOps",
     icon: "Terminal",
     items: ["Git", "GitHub", "Postman", "Docker", "ESLint", "Prettier", "VS Code"]
   }
@@ -94,66 +94,51 @@ export const services = [
     description: "Building responsive interfaces with React and Next.js using reusable components, clear state flow, and accessible UI patterns."
   },
   {
-    icon: "Database",
+    icon: "Server",
     title: "Backend API Development",
-    description: "Designing backend services with Node.js and NestJS, including auth, validation, error handling, and database integration."
+    description: "Designing backend services with Node.js and NestJS, including authentication, validation, error handling, and database integration."
   },
   {
     icon: "Database",
     title: "Database & Architecture",
-    description: "Modeling relational data with PostgreSQL and Prisma, structuring modules for maintainability, and documenting trade-offs."
+    description: "Modeling relational data with PostgreSQL and Prisma, structuring modules for maintainability, and documenting architectural trade-offs."
   },
   {
     icon: "Smartphone",
     title: "Cross-Platform Mobile",
-    description: "Developing Flutter apps with practical architecture and API integration when mobile delivery is required."
+    description: "Developing Flutter apps with clean architecture and API integration when mobile delivery is part of the project scope."
   }
 ]
 
 export const process = [
-  { icon: "MessageSquare", title: "Discovery", desc: "Understanding your goals and requirements." },
-  { icon: "Layout", title: "Design", desc: "Creating intuitive and beautiful user interfaces." },
-  { icon: "GitBranch", title: "Development", desc: "Writing clean, scalable, and efficient code." },
-  { icon: "Zap", title: "Deployment", desc: "Launching your app to the world." }
-]
-
-export const testimonials = [
-  {
-    name: "Sarah Johnson",
-    role: "Product Manager",
-    text: "Yousaf transformed our vague requirements into a polished, high-performance application. His attention to detail and ability to solve complex problems is outstanding.",
-    rating: 5
-  },
-  {
-    name: "David Chen",
-    role: "Startup Founder",
-    text: "Working with Yousaf was a game-changer for our MVP. He delivered faster than expected and the code quality was exceptional. Highly recommended!",
-    rating: 5
-  }
+  { icon: "MessageSquare", title: "Discovery", desc: "Understanding your goals, requirements, and constraints." },
+  { icon: "Layout", title: "Design", desc: "Planning architecture and interface before writing code." },
+  { icon: "GitBranch", title: "Development", desc: "Writing clean, maintainable code with regular progress updates." },
+  { icon: "Zap", title: "Delivery", desc: "Deploying, documenting, and handing off the finished product." }
 ]
 
 export const projectsData = [
   {
     id: "omniblox",
-    title: "OmniBlox – ERP & CRM for Modern Businesses",
-    shortDescription: "Full-stack ERP/CRM practice project with modular backend and typed frontend workflows.",
-    description: "OmniBlox is a full-stack practice project focused on consolidating CRM and ERP style workflows into one codebase. The goal is to demonstrate practical architecture decisions across NestJS services, Next.js UI modules, PostgreSQL schema design, and API-driven dashboard features.",
+    title: "OmniBlox — ERP & CRM Web Application",
+    shortDescription: "Modular full-stack ERP/CRM system with NestJS backend, Next.js frontend, and PostgreSQL data layer.",
+    description: "A full-stack ERP/CRM system built to consolidate contact management, product catalog, purchase orders, and expense tracking in one codebase. Demonstrates modular NestJS architecture, type-safe API contracts, and relational data modeling with Prisma ORM.",
     category: "Full-Stack Application",
     image: "/projects/panoptic.png",
     thumbnail: "/projects/panoptic-thumbnail.png",
-    tech: ["Nest.js", "Next.js", "TypeScript", "PostgreSQL", "Prisma ORM"],
+    tech: ["NestJS", "Next.js", "TypeScript", "PostgreSQL", "Prisma ORM"],
     github: "https://github.com/dev-yousaf/OmniBlox",
     live: null,
     featured: true,
-    challenge: "Demonstrate how to structure a large product domain (CRM + ERP concepts) without mixing concerns across frontend, backend, and data layers.",
-    solution: "Implemented a modular NestJS backend with domain-focused modules and a typed Next.js frontend. Used PostgreSQL + Prisma for relational modeling and predictable data access patterns.",
-    outcome: "Public repository showcasing architecture-first implementation and ongoing feature expansion.",
+    challenge: "Structure a large product domain — CRM and ERP concepts — without mixing concerns across frontend, backend, and data layers.",
+    solution: "Implemented domain-focused modules in NestJS with a typed Next.js frontend. Used PostgreSQL and Prisma for relational modeling and predictable data access patterns.",
+    outcome: "Delivered 5 core ERP/CRM workflows in one end-to-end TypeScript codebase with modular NestJS architecture and Prisma-backed data modeling.",
     features: [
       "Role and workflow modules for contacts, products, purchase orders, and expenses",
-      "Type-safe contracts between frontend and backend using TypeScript",
+      "Type-safe contracts between frontend and backend using TypeScript throughout",
       "Relational schema design in PostgreSQL with Prisma models and migrations",
-      "Dashboard-oriented UI with reusable components and clear state boundaries",
-      "Personal role: end-to-end ownership across architecture, API, database, and UI"
+      "Dashboard UI with reusable components and clear state boundaries",
+      "End-to-end ownership: architecture, API design, database modeling, and UI"
     ],
     screenshots: [
       "/projects/panoptic-1.png",
@@ -163,26 +148,26 @@ export const projectsData = [
   },
   {
     id: "harmoni",
-    title: "Harmoni AI – Team Collaboration Hub",
-    shortDescription: "Collaboration platform prototype combining chat, tasks, and meeting assistant workflows.",
-    description: "Harmoni is a full-stack prototype built to explore collaboration workflows in one workspace. It combines project boards, chat flows, and AI-assisted meeting notes to show integration patterns between UI, API, data persistence, and assistant-style automation features.",
+    title: "Harmoni — Team Collaboration Platform",
+    shortDescription: "Full-stack collaboration workspace with project boards, real-time chat, and AI-assisted meeting notes.",
+    description: "A unified workspace combining project boards, chat, and AI-assisted meeting note capture. Built to explore how multi-feature collaboration tools can be structured with independent, maintainable modules. Integrates real-time communication patterns with a PostgreSQL-backed data model.",
     category: "Full-Stack Application",
-    tech: ["Next.js", "Node.js", "AI APIs", "PostgreSQL", "Real-time Chat"],
+    image: "/projects/harmoni-v20260109.png",
+    thumbnail: "/projects/harmoni-thumbnail.png",
+    tech: ["Next.js", "Node.js", "TypeScript", "PostgreSQL", "AI APIs", "WebSockets"],
     github: "https://github.com/dev-yousaf/Harmoni-Public",
     live: null,
     featured: true,
-    challenge: "Show how collaboration tools can be unified in one project architecture while keeping each module independently maintainable.",
-    solution: "Designed feature modules for chat, task flows, and meeting notes. Implemented backend integration patterns for real-time interactions and persisted workspace data in PostgreSQL.",
-    outcome: "Prototype-level implementation with public code focused on system design and feature composition.",
+    challenge: "Unify multiple collaboration features — boards, chat, meeting notes — in one architecture while keeping each module independently maintainable.",
+    solution: "Designed feature modules with clear boundaries, implemented real-time communication patterns, and persisted workspace data in PostgreSQL.",
+    outcome: "Implemented 4 collaboration flows (boards, tasks, chat, and meeting notes) with module-level separation and PostgreSQL persistence.",
     features: [
-      "Unified workspace model for boards, chat, and task updates",
-      "Meeting assistant workflow for note capture and task extraction concepts",
-      "Real-time communication patterns integrated with backend services",
-      "PostgreSQL-backed data model for teams, tasks, and activity context",
-      "Personal role: full-stack implementation and product flow design"
+      "Unified workspace model for boards, tasks, chat, and activity context",
+      "AI-assisted meeting notes workflow for note capture and task extraction",
+      "Real-time communication integrated with backend services",
+      "PostgreSQL-backed data model for teams, tasks, and workspace activity",
+      "Full-stack implementation and product flow design"
     ],
-    image: "/projects/harmoni-v20260109.png",
-    thumbnail: "/projects/harmoni-thumbnail.png",
     screenshots: [
       "/projects/harmoni-1-v20260109.png",
       "/projects/harmoni-2-v20260109.png",
@@ -190,27 +175,52 @@ export const projectsData = [
     ]
   },
   {
+    id: "fractal-explorer",
+    title: "Distributed Fractal Explorer",
+    shortDescription: "Distributed rendering pipeline combining C++ compute workers with Node.js orchestration and a Next.js interface.",
+    description: "A systems-focused project that offloads fractal rendering to parallel C++ workers coordinated by a Node.js API, with a Next.js frontend for render controls and real-time progress. Demonstrates clean separation of compute, orchestration, and presentation layers across a multi-stack architecture.",
+    category: "High-Performance Computing",
+    image: "/projects/fractal-explorer.png",
+    thumbnail: "/projects/fractal-explorer-thumbnail.png",
+    tech: ["C++", "MSMPI", "Node.js", "Next.js", "vcpkg"],
+    github: "https://github.com/dev-yousaf/Distributed-Fractal-Explorer",
+    live: null,
+    featured: true,
+    challenge: "Model a distributed pipeline that separates heavy numerical computation from API coordination and UI concerns.",
+    solution: "Implemented C++ worker execution with MSMPI for parallel rendering, added Node.js middleware for job coordination, and built a Next.js interface for render control and progress visibility.",
+    outcome: "Built a 3-layer distributed architecture (C++ compute, Node.js orchestration, Next.js UI) for parallel rendering and progress-aware control.",
+    features: [
+      "Distributed rendering across CPU workers using MSMPI",
+      "C++ compute layer cleanly separated from Node.js orchestration layer",
+      "Render task management and status reporting pipeline",
+      "Interactive frontend for zoom, parameter controls, and render progress",
+      "Architecture and cross-stack integration owned end-to-end"
+    ],
+    screenshots: [
+      "/projects/fractal-explorer-1.png"
+    ]
+  },
+  {
     id: "eduassign",
-    title: "EduAssign – Assignment Submission System",
-    shortDescription: "Role-based assignment management system for students and instructors.",
-    description: "EduAssign is a web application that demonstrates role-based access control, file workflows, and structured CRUD operations for academic assignment handling. It highlights practical backend logic and interface flow for multi-role users.",
+    title: "EduAssign — Assignment Management System",
+    shortDescription: "Role-based web application for managing academic assignments across admin, instructor, and student roles.",
+    description: "A web application demonstrating role-based access control, file workflows, and structured CRUD operations for academic assignment handling. Features distinct permission levels, assignment lifecycle management, and secure file submission.",
     category: "Web Application",
     image: "/projects/eduassign.png",
     thumbnail: "/projects/eduassign-thumbnail.png",
     tech: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
     github: "https://github.com/dev-yousaf/EduAssign",
     live: null,
-    featured: true,
-    challenge: "Create a clear multi-role workflow where admins, instructors, and students have different permissions and responsibilities.",
-    solution: "Implemented permission-aware routes, assignment lifecycle actions, and file submission handling in a PHP + MySQL stack with responsive UI.",
-    outcome: "Complete learning project published on GitHub with core role-based features implemented.",
+    featured: false,
+    challenge: "Build a clear multi-role workflow where admins, instructors, and students have different permissions and interface experiences.",
+    solution: "Implemented permission-aware routes, assignment lifecycle actions, and file submission handling with responsive UI.",
+    outcome: "Implemented 3-role access control (Admin, Instructor, Student) and assignment lifecycle flows including creation, submission, grading, and tracking.",
     features: [
       "Role-based access control for Admin, Instructor, and Student users",
       "Assignment creation, submission, and grading lifecycle",
       "Secure file upload and download workflows",
       "Deadline and status management for assignments",
-      "Admin-facing management screens for academic operations",
-      "Personal role: end-to-end implementation of core modules"
+      "Admin-facing management screens for academic operations"
     ],
     screenshots: [
       "/projects/eduassign.png",
@@ -219,9 +229,9 @@ export const projectsData = [
   },
   {
     id: "assignmate",
-    title: "AssignMate – Android Assignment App",
-    shortDescription: "Android client companion for assignment workflows with Firebase integration.",
-    description: "AssignMate extends assignment workflows to mobile through a native Android app. It demonstrates app-side authentication, notification handling, and local data behavior for a student/instructor use case.",
+    title: "AssignMate — Android Assignment App",
+    shortDescription: "Android client for assignment workflows with Firebase authentication and push notifications.",
+    description: "A native Android app extending assignment workflows to mobile. Demonstrates Firebase authentication, push notifications, and local storage patterns for a student/instructor use case optimized for mobile usage.",
     category: "Mobile App",
     image: "/projects/assignmate.jpg",
     thumbnail: "/projects/assignmate-thumbnail.png",
@@ -229,47 +239,19 @@ export const projectsData = [
     github: "https://github.com/dev-yousaf/AssignMate",
     live: null,
     featured: false,
-    challenge: "Provide mobile access to assignment tasks while keeping interactions usable on unstable networks.",
-    solution: "Built Android screens for assignment tracking, integrated Firebase authentication and notifications, and added local storage patterns for smoother mobile usage.",
-    outcome: "Working Android project with core flows and Firebase-backed interactions available in source code.",
+    challenge: "Provide reliable mobile access to assignment tasks on potentially unstable networks.",
+    solution: "Built Android screens for assignment tracking, integrated Firebase authentication and notifications, and added local storage for offline continuity.",
+    outcome: "Implemented 5 core mobile flows: authentication, assignment viewing, status updates, push notifications, and local continuity support.",
     features: [
-      "Mobile login and user session handling with Firebase",
-      "Assignment viewing and update flows optimized for small screens",
-      "Push notification integration for assignment events",
-      "Local storage support for better mobile continuity",
-      "Material-style interface with reusable components",
-      "Personal role: native Android implementation and Firebase integration"
+      "Mobile login and user session handling with Firebase Auth",
+      "Assignment viewing and status update flows for small screens",
+      "Push notification integration for assignment deadlines and events",
+      "Local storage support for better mobile continuity on poor networks",
+      "Material-style interface with reusable screen components"
     ],
     screenshots: [
       "/projects/assignmate-1.jpg",
       "/projects/assignmate-2.jpg"
-    ]
-  },
-  {
-    id: "fractal-explorer",
-    title: "Distributed Fractal Explorer",
-    shortDescription: "Distributed rendering project combining C++ compute workers with Node.js and Next.js orchestration.",
-    description: "Distributed Fractal Explorer is a systems-focused project showing how compute-heavy workloads can be split across worker processes and coordinated through a web stack. It demonstrates integration between C++ computation, Node.js orchestration, and frontend visualization.",
-    category: "High-Performance Computing",
-    tech: ["C++", "MSMPI", "Node.js", "Next.js", "vcpkg", "Visual Studio Build Tools"],
-    github: "https://github.com/dev-yousaf/Distributed-Fractal-Explorer",
-    live: null,
-    featured: true,
-    challenge: "Model a distributed pipeline that separates heavy numerical computation from API and UI concerns.",
-    solution: "Implemented C++ worker execution with MSMPI, added Node.js middleware for job coordination, and built a Next.js interface for render control and progress visibility.",
-    outcome: "Public multi-stack engineering project demonstrating distributed processing architecture and integration workflow.",
-    features: [
-      "Distributed rendering across CPU workers using MSMPI",
-      "C++ compute layer separated from Node.js orchestration",
-      "Render task management and status reporting pipeline",
-      "Interactive frontend for zoom, controls, and progress visibility",
-      "Configurable rendering parameters and output workflow",
-      "Personal role: architecture and cross-stack integration"
-    ],
-    image: "/projects/fractal-explorer.png",
-    thumbnail: "/projects/fractal-explorer-thumbnail.png",
-    screenshots: [
-      "/projects/fractal-explorer-1.png"
     ]
   }
 ]

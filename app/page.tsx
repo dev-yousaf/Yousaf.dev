@@ -6,18 +6,17 @@ import Image from "next/image"
 import { 
   ArrowRight, 
   Code2, 
+  Server,
   Smartphone, 
   Database, 
   Sparkles, 
-  CheckCircle, 
   MessageSquare, 
-  Star,
   Zap,
   Layout,
   GitBranch,
   Globe
 } from "lucide-react"
-import { projectsData, personalInfo, services, process, testimonials } from "@/lib/portfolio-data"
+import { projectsData, personalInfo, services, process } from "@/lib/portfolio-data"
 import { DownloadResume } from '@/components/download-resume'
 
 export default function Home() {
@@ -55,8 +54,8 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-4 lg:gap-6 items-center">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -80,7 +79,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-5xl md:text-7xl font-bold mb-6"
+                className="text-3xl md:text-4xl font-bold mb-6"
               >
                 <span className="bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
                   {personalInfo.name}
@@ -91,7 +90,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-2xl md:text-3xl text-gray-800 dark:text-gray-200 mb-6 font-medium"
+                className="text-xl md:text-2xl text-gray-800 dark:text-gray-200 mb-6 font-medium"
               >
                 {personalInfo.title}
               </motion.p>
@@ -115,7 +114,7 @@ export default function Home() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold flex items-center gap-2 shadow-lg"
+                    className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold flex items-center gap-2 shadow-lg"
                   >
                     View My Work
                     <ArrowRight className="w-5 h-5" />
@@ -125,7 +124,7 @@ export default function Home() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-gray-600 rounded-lg font-semibold transition-colors shadow-lg"
+                    className="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-gray-600 rounded-lg text-sm font-semibold transition-colors shadow-lg"
                   >
                     Get in Touch
                   </motion.button>
@@ -202,7 +201,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               What I Do
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
@@ -213,6 +212,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => {
               const IconComponent = service.icon === "Smartphone" ? Smartphone : 
+                                   service.icon === "Server" ? Server :
                                    service.icon === "Globe" ? Globe :
                                    service.icon === "Database" ? Database : Code2;
               return (
@@ -238,7 +238,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               My Process
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
@@ -286,7 +286,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               Featured Projects
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
@@ -355,54 +355,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section (New) */}
-      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-              Client Stories
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              What people say about working with me
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 relative hover:shadow-lg transition-shadow"
-              >
-                <div className="absolute top-8 right-8 text-blue-100 dark:text-blue-900/20">
-                  <MessageSquare className="w-12 h-12" />
-                </div>
-                <div className="flex gap-1 mb-4 text-yellow-400">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="w-5 h-5 fill-current" />
-                  ))}
-                </div>
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 italic relative z-10">
-                  "{testimonial.text}"
-                </p>
-                <div>
-                  <h4 className="font-bold text-gray-900 dark:text-white">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 px-4 bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700">
         <div className="max-w-4xl mx-auto text-center">
@@ -411,7 +363,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Ready to Start Your Project?
             </h2>
             <p className="text-xl text-blue-100 mb-8">

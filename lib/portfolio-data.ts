@@ -22,8 +22,8 @@ export const about = {
   description: "Based in Lahore, I specialize in React/Next.js frontends and Node.js/NestJS backends. I have worked in team environments with Git workflows, sprint cycles, and real product requirements. I care about writing code that is easy to read, extend, and hand off.",
   philosophy: "Ship working software first. Refactor with intention. Document decisions so the next developer does not have to guess.",
   stats: [
-    { label: "Years Experience", value: "2+" },
-    { label: "Projects Completed", value: "8+" },
+    { label: "API Endpoints Designed", value: "30+" },
+    { label: "Database Schemas", value: "10+" },
     { label: "Core Stack", value: "React + Node" },
     { label: "Availability", value: "Open to Work" }
   ]
